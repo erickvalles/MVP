@@ -2,7 +2,7 @@ package com.example.erick.mvp.root;
 
 import android.app.Application;
 
-
+import com.example.erick.mvp.login.LoginModule;
 
 
 public class App extends Application {
@@ -13,6 +13,7 @@ public class App extends Application {
         super.onCreate();
         component = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
+                .loginModule(new LoginModule())
                 .build();
     }
 
